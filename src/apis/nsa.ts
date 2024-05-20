@@ -42,6 +42,10 @@ export async function nsaRequest(
     options.body = JSON.stringify(body);
   }
 
+  console.log(
+    `[${new Date().toISOString()}] ${customer_id} ${method} ${uri}?${urlSearchParams}`
+  );
+
   const result = await fetch(
     `${SERVICE_URL}${uri}?${urlSearchParams}`,
     options
